@@ -5,11 +5,22 @@ import { BiSearch } from "react-icons/bi";
 import { LiaShoppingBagSolid } from "react-icons/lia";
 import { IoIosMenu, IoIosClose } from "react-icons/io";
 import { motion } from "framer-motion";
+import { FaStore, FaQuestionCircle, FaBlog, FaInfoCircle } from "react-icons/fa"; // Additional icons for new links
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
+
+  // Define the links and their corresponding icons
+  const navLinks = [
+    { name: "Shop", icon: <FaStore /> },
+    { name: "Pages", icon: <RiPlantFill /> }, // You can update this with a relevant icon
+    { name: "FAQs", icon: <FaQuestionCircle /> },
+    { name: "Blog", icon: <FaBlog /> },
+    { name: "About Us", icon: <FaInfoCircle /> },
+    { name: "Contact Us", icon: <FaPhone /> },
+  ];
 
   return (
     <>
@@ -90,8 +101,8 @@ const Header = () => {
             <div className="line w-1 h-8 bg-gray-200 rounded-xl"></div>
             <div className="flex items-center gap-2 md:gap-4">
               <LiaShoppingBagSolid className="text-xl md:text-2xl" />
-                <span className="the-number-of-products">0</span>
-                <div className="flex flex-col items-start gap-1 text-xs md:text-sm">
+              <span className="the-number-of-products">0</span>
+              <div className="flex flex-col items-start gap-1 text-xs md:text-sm">
                 <h1>Shopping cart</h1>
                 <h1 className="font-semibold">$ 0.00</h1>
               </div>
@@ -117,22 +128,15 @@ const Header = () => {
               menuOpen ? "flex" : "hidden"
             } lg:flex bg-gray-200 backdrop-blur-2xl flex-col lg:flex-row absolute lg:relative top-12 lg:top-0 left-0 w-full  lg:bg-transparent py-4 lg:py-0 items-center gap-4 lg:gap-8 text-sm lg:text-lg`}
           >
-            {[
-              
-              "Shop",
-              "Pages",
-              "FAQs",
-              "Blog",
-              "About Us",
-              "Contact Us",
-            ].map((link, index) => (
+            {navLinks.map((link, index) => (
               <motion.a
                 key={index}
-                href={`/${link.toLowerCase().replace(/\s+/g, "-")}`}
-                className="text-gray-600 hover:text-green-500 transition-all ease-in-out duration-200"
+                href={`/${link.name.toLowerCase().replace(/\s+/g, "-")}`}
+                className="text-gray-600 hover:text-green-500 transition-all ease-in-out duration-200 flex items-center gap-2"
                 whileHover={{ scale: 1.1 }}
               >
-                {link}
+                {link.icon}
+                <span>{link.name}</span>
               </motion.a>
             ))}
           </div>
