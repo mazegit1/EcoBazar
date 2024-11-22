@@ -145,7 +145,7 @@ const Header = () => {
           <div className="hidden lg:flex items-center gap-2 w-56 text-sm lg:text-lg">
             <FaPhone />
             <a href="tel:+994556881500" className="hover:underline">
-              +994-55-688-15-00
+              055-688-15-00
             </a>
           </div>
         </motion.div>
