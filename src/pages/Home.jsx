@@ -1,6 +1,6 @@
 import React from "react";
 import heroimg from "../images/home-main-image.png";
-import { FaArrowRightLong } from "react-icons/fa6";
+import { FaArrowRightLong, FaArrowUp } from "react-icons/fa6";
 import { motion } from "framer-motion";
 import { BsShop } from "react-icons/bs";
 import { TfiHeadphoneAlt } from "react-icons/tfi";
@@ -9,9 +9,14 @@ import { BsBoxSeam } from "react-icons/bs";
 import ProjectsHero from "../components/ProjectsHero";
 
 const Home = () => {
+  // Scroll to top function
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <>
-      <div className="home px-6 lg:px-20 xl:px-56 pt-16 md:pt-24 lg:pt-56">
+      <div className="home px-6 lg:px-20 xl:px-56 pt-56">
         {/* Hero Section */}
         <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-20">
           {/* Left Image */}
@@ -98,6 +103,15 @@ const Home = () => {
       </div>
 
       <ProjectsHero />
+
+      {/* Fixed Scroll to Top Icon */}
+      <div
+        className="fixed left-4 flex items-center gap-2 text-white text-semibold text-2xl bottom-16 z-50 bg-[#00B207] p-3 rounded-full cursor-pointer shadow-lg hover:bg-[#009405] transition-all ease-in-out"
+        onClick={scrollToTop}
+      >
+        <h1>Scrool To Top</h1>
+        <FaArrowUp className="text-white text-2xl" />
+      </div>
     </>
   );
 };
