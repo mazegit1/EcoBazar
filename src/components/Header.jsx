@@ -6,6 +6,7 @@ import { LiaShoppingBagSolid } from "react-icons/lia";
 import { IoIosMenu, IoIosClose } from "react-icons/io";
 import { motion } from "framer-motion";
 import { FaStore, FaQuestionCircle, FaBlog, FaInfoCircle } from "react-icons/fa"; // Additional icons for new links
+import { MdOutlineTerminal } from "react-icons/md";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -15,11 +16,11 @@ const Header = () => {
   // Define the links and their corresponding icons
   const navLinks = [
     { name: "Shop", icon: <FaStore /> },
-    { name: "Pages", icon: <RiPlantFill /> }, // You can update this with a relevant icon
+    { name: "Terms", icon: <MdOutlineTerminal /> }, // You can update this with a relevant icon
     { name: "FAQs", icon: <FaQuestionCircle /> },
     { name: "Blog", icon: <FaBlog /> },
-    { name: "About Us", icon: <FaInfoCircle /> },
-    { name: "Contact Us", icon: <FaPhone /> },
+    { name: "About", icon: <FaInfoCircle /> },
+    { name: "Contact", icon: <FaPhone /> },
   ];
 
   return (

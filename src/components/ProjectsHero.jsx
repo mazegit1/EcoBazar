@@ -132,7 +132,7 @@ const ProjectsHero = () => {
               <img
                 src={product.img}
                 alt={product.name}
-                className="w-full h-48 object-cover rounded-md"
+                className=" rounded-2xl"
               />
               {product.discount && (
                 <span className="absolute top-2 left-2 bg-red-500 text-white text-sm px-2 py-1 rounded">
