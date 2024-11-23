@@ -6,27 +6,22 @@ import termsImage from '../images/terms.jpg';
 const Terms = () => {
   const [openSection, setOpenSection] = useState(null);
 
-  // Toggle sections
+  // Toggle sections 
   const toggleSection = (index) => {
     setOpenSection(openSection === index ? null : index);
   };
 
   return (
     <div className="relative min-h-screen bg-gray-50 px-4 py-80 overflow-hidden">
-      {/* Background Animation */}
+      {/* Curtain-like Background Animation */}
       <motion.div
         className="absolute inset-0 w-full h-full bg-cover bg-center"
         style={{ backgroundImage: `url(${termsImage})` }}
-        animate={{ x: ['0%', '100%', '0%'] }}
-        transition={{
-          duration: 20,
-          ease: 'linear',
-          repeat: Infinity
-        }}
+        
       ></motion.div>
 
       {/* Header Section */}
-      <motion.div 
+      <motion.div
         className="text-center mb-12 relative z-10"
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
@@ -139,7 +134,7 @@ const Terms = () => {
       </div>
 
       {/* Footer Section */}
-      <motion.div 
+      <motion.div
         className="text-center mt-12 relative z-10"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
